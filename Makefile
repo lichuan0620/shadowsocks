@@ -13,9 +13,11 @@ CONTAINER_NAME ?= ssserver
 IMAGE ?= shadowsocks-libev:v3.2.5-obfs
 REPLICAS ?= 2
 
-.PHONY: run build
+.PHONY: run build clean
 
 run: run-container
+
+clean: clean-container
 
 build:
 	docker build -t ${IMAGE} -f ./Dockerfile .
@@ -48,3 +50,10 @@ run-service:
 		--restart-condition on-failure			\
 		--replicas ${REPLICAS}					\
 		${IMAGE}
+
+clean-container:
+	docker container stop ${CONTAINER_NAME}
+	docker container rm ${CONTAINER_NAME}
+
+clean-service:
+	docker service rm ${CONTAINER_NAME}
