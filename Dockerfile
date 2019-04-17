@@ -27,5 +27,6 @@ CMD exec ss-server \
       --plugin obfs-server \
       --plugin-opts obfs=$OBFS;obfs-host=$OBFS_HOST \
       --reuse-port \
+      --fast-open \
       -u \
       $ARGS
