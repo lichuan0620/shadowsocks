@@ -31,6 +31,7 @@ run-container:
 		-e "METHOD=${ENCRYPTION}" 				\
 		-e "TIMEOUT=${TIMEOUT}" 				\
 		-e "OBSF_HOST=${OBSF_HOST}" 			\
+		-e "ARGS=${ARGS}"						\
 		-p "${SERVER_PORT}:${SERVER_PORT}" 		\
 		-p "${SERVER_PORT}:${SERVER_PORT}/udp" 	\
 		--restart on-failure 					\
@@ -45,6 +46,7 @@ run-service:
 		-e "METHOD=${ENCRYPTION}" 				\
 		-e "TIMEOUT=${TIMEOUT}" 				\
 		-e "OBSF_HOST=${OBSF_HOST}" 			\
+		-e "ARGS=${ARGS}"						\
 		-p "${SERVER_PORT}:${SERVER_PORT}" 		\
 		-p "${SERVER_PORT}:${SERVER_PORT}/udp" 	\
 		--restart-condition on-failure			\
