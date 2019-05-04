@@ -18,9 +18,7 @@ Install Docker and other prerequisites. Assuming you chose Ubuntu as instructed:
 {
 sudo apt update -y
 sudo apt install -y \
-        git \
         build-essential \
-        install \
         apt-transport-https \
         ca-certificates \
         curl \
