@@ -49,5 +49,5 @@ sudo docker swarm init
 
 # default setting should be fine but at least change the password
 # if your VPS has multiple cores, set REPLICAS to core count + 1 for optimal performance
-PASSWORD=Pwd123456 sudo make run-service
+PASSWORD=Pwd123456 sudo -E make run-service
 ```
